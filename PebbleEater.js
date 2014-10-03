@@ -30,12 +30,13 @@ $(function() {
 	});
 	$('#score').html("0");
 	$('#level').html("1");
-	setupIntervals();
+	startIntervals();
 });
 
-function setupIntervals() {
-	playerMove = setInterval( function() { tickMove("player") }, 10);
-	miniCircleChase = setInterval( function() { $(".minicircle").each(function(index) { tickChase($(".minicircle:eq("+index+")").attr('id'), "player"); })}, 60);
+function startIntervals() {
+	playerMove = setInterval( function() { tickMove("player") }, 5);
+	collisionCheck = setInterval( function() { (checkCollision()) }, 30);
+	miniCircleChase = setInterval( function() { $(".minicircle").each(function(index) { tickChase($(".minicircle:eq("+index+")").attr('id'), "player"); })}, 50 - 5*level);
 	magicCircleBlink = setInterval( function() { $(".magiccircle").each(function(index) { tickBlink($(".magiccircle:eq("+index+")").attr('id')) })}, 100);
 	randomGen = setInterval( function() { generateRandom(); }, 200);
 }
@@ -48,29 +49,28 @@ function pauseIntervals() {
 }
 
 function togglePause() {
-	if (pause) setupIntervals();
+	if (pause) startIntervals();
 	else pauseIntervals();
 	pause = !pause;
 }
 
 function tickLeft(id) {
-	if (parseInt($('#' + id).css("left")) > 0) $('#' + id).css({"left": "-=2"});
+	if (parseInt($('#' + id).css("left")) > 0) $('#' + id).css({"left": "-=1"});
 }
 function tickRight(id) {
-	if (parseInt($('#' + id).css("left")) < 1000) $('#' + id).css({"left": "+=2"});
+	if (parseInt($('#' + id).css("left")) < 1000) $('#' + id).css({"left": "+=1"});
 }
 function tickUp(id) {
-	if (parseInt($('#' + id).css("top")) > 0) $('#' + id).css({"top": "-=2"});
+	if (parseInt($('#' + id).css("top")) > 0) $('#' + id).css({"top": "-=1"});
 }
 function tickDown(id) {
-	if (parseInt($('#' + id).css("top")) < 500) $('#' + id).css({"top": "+=2"});
+	if (parseInt($('#' + id).css("top")) < 500) $('#' + id).css({"top": "+=1"});
 }
 function tickMove(id) {
 	if (leftKey) tickLeft(id);
 	if (rightKey) tickRight(id);
 	if (upKey) tickUp(id);
 	if (downKey) tickDown(id);
-	checkCollision(id);
 	upScore(1);
 }
 
@@ -101,9 +101,14 @@ function upScore(x) {
 	score += x;
 	$('#score').html(score + "");
 	if (Math.floor(score/10000) > Math.floor(initScore/10000)) {
-		level++;
-		$('#level').html(level + "");
+		upLevel();
 	}
+}
+function upLevel() {
+	level++;
+	$('#level').html(level + "");
+	pauseIntervals();
+	startIntervals();
 }
 function checkCollision() {
 	$(".minicircle").each(function(index) {
