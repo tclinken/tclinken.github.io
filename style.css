@@ -1,0 +1,60 @@
+.circle {
+	position: absolute;
+	top: 300px;
+	left: 300px;
+	width: 0px;
+	height: 0px;
+	border: 50px solid yellow;
+	border-radius: 50px;
+}
+.minicircle {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	width: 0px;
+	height: 0px;
+	border: 20px solid black;
+	border-radius: 20px;
+}
+#scorecontainer {
+	position: absolute;
+	top: 20px;
+	left: 800px;
+	width: 100px;
+	height: 40px;
+	background: gray;
+	color: white;
+	text-align: center;
+}
+#levelcontainer {
+	position: absolute;
+	top: 20px;
+	left: 200px;
+	width: 100px;
+	height: 40px;
+	background: gray;
+	color: white;
+	text-align: center;
+}
+.span {
+	color: white;
+}
+.magiccircle {
+	position: absolute;
+	width: 0 px;
+	height: 0 px;
+	border: 20px solid yellow;
+	border-radius: 20px;
+}
+#gamecontainer {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 1100px;
+	height: 600px;
+	background: blue;
+}
+body {
+	position: absolute;
+	background-color: black;
+}
