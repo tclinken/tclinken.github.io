@@ -129,7 +129,7 @@ function checkCollision() {
 	});
 }
 function endGame() {
-	window.location.href = "GameOver.html";
+	window.location.href = "http://tclinken.github.io/GameOver";
 }
 function generateRandom() {
 	rand = Math.random();
