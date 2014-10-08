@@ -1,0 +1,1 @@
+This is a simple 2D web game loosely based on Pacman.
