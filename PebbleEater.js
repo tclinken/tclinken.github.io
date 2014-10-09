@@ -62,8 +62,8 @@ function initializeBackgrounds() {
 
 // sets the background, depending on the current level
 function setBackground() {
-	if (level < backgrounds.length) $('#gamecontainer').css('background-image', 'url(' + backgrounds[level - 1] + ')');
-	else $('#gamecontainer').css('background-image', 'url(' + backgrounds[backgrounds.length - 1] + ') no-repeat');
+	if (level <= backgrounds.length) $('#gamecontainer').css('background-image', 'url(' + backgrounds[level - 1] + ')');
+	else $('#gamecontainer').css('background-image', 'url(' + backgrounds[backgrounds.length - 1] + ')');
 }
 
 // pauses or unpauses the game, depending on current state
