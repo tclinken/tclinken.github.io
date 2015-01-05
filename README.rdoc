@@ -2,4 +2,4 @@ This is a simple 2D web game loosely based on Pacman.
 
 Move with the arrow keys, and avoid touching the enemy pebbles until you collect a magical flashing pebble. Then you can attack for extra points. Pause with the 'p' key.
 
-Play at http://tclinken.github.io/PebbleEater.html.
+Play at http://tclinken.github.io/PebbleEater.html (on Safari or Chrome).
