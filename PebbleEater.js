@@ -79,7 +79,7 @@ function tickLeft(id) {
 }
 
 // move the object with the given id one tick to the right
-nfunction tickRight(id) {
+function tickRight(id) {
 	if (parseInt($('#' + id).css("left")) < 1000) $('#' + id).css({"left": "+=1"});
 }
 
