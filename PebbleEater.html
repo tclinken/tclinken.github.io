@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pebble Eater</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="PebbleEater.js"></script>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+	<div id="gamecontainer">
+		<div id="levelcontainer">
+			Level
+			<br/>
+			<span id="level"></span>
+		</div>
+		<div id="scorecontainer">
+			Score
+			<br/>
+			<span id="score"></span>
+		</div>
+		<div id="player" class="circle"></div>
+		<!--<div id="chaser" class="minicircle"></div>
+		<div id="chaser2" class="minicircle" style="top:400px; left:900px; border: 20px solid gray;"></div>-->
+		<div id="gameover">
+			GAME OVER
+			<br/>
+			<a onclick="clearScreen(); startGame();">TRY AGAIN</a>
+		</div>
+	</div>
+</body>
+</html>
