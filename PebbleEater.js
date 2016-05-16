@@ -55,8 +55,8 @@ function pauseIntervals() {
 // initializes the backgrounds array
 function initializeBackgrounds() {
 	backgrounds = Array(3);
-	backgrounds[0] = "level1.jpg";
-	backgrounds[1] = "level2.png";
+	backgrounds[0] = "level1.png";
+	backgrounds[1] = "level2.jpg";
 	backgrounds[2] = "level3.jpg";
 }
 
